@@ -23,7 +23,8 @@ public class Project {
 
     @ElementCollection
     @CollectionTable(name = "project_screenshots", joinColumns = @JoinColumn(name = "project_id"))
-    @Column(name = "screenshot", columnDefinition = "LONGBLOB")
+    @Column(name = "screenshot")
+    @Lob
     private List<byte[]> screenshots;
 
     @Lob
@@ -31,7 +32,7 @@ public class Project {
     private byte[] video;
 
     @Lob
-    @Column(name = "project_file", columnDefinition = "LONGBLOB")
+    @Column(name = "project_file")
     private byte[] projectFile;
 
     @Column(nullable = false)
